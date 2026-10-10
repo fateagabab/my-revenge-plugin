@@ -1,0 +1,8 @@
+{
+  "format": 1,
+  "id": "keepkeyboard",
+  "name": "Keep Keyboard Open",
+  "description": "Prevents the keyboard from being dismissed",
+  "authors": [{ "name": "you" }],
+  "main": "index.js"
+}
