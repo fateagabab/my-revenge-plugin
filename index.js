@@ -1,17 +1,19 @@
-const { findByProps } = vendetta.metro;
-const { instead } = vendetta.patcher;
+(function () {
+  const { findByProps } = vendetta.metro;
+  const { instead } = vendetta.patcher;
+  let unpatch;
 
-let unpatch;
-
-module.exports = {
-  onLoad: () => {
-    const Keyboard = findByProps("dismiss", "addListener");
-
-    unpatch = instead("dismiss", Keyboard, () => {
-      // Swallow every dismiss call - keyboard stays up no matter what.
-    });
-  },
-  onUnload: () => {
-    unpatch?.();
-  },
-};
+  return {
+    onLoad() {
+      const Keyboard = findByProps("dismiss", "addListener");
+      if (!Keyboard) {
+        console.log("Keyboard module not found");
+        return;
+      }
+      unpatch = instead("dismiss", Keyboard, () => {});
+    },
+    onUnload() {
+      unpatch?.();
+    },
+  };
+})();
