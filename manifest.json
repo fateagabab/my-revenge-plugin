@@ -1,8 +1,8 @@
 {
-  "format": 1,
-  "id": "keepkeyboard",
   "name": "Keep Keyboard Open",
   "description": "Prevents the keyboard from being dismissed",
-  "authors": [{ "name": "you" }],
-  "main": "index.js"
+  "authors": [{ "name": "fateagabab" }],
+  "main": "index.js",
+  "hash": "keepkeyboard1",
+  "vendetta": { "icon": "ic_message_edit" }
 }
